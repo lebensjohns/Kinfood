@@ -1,19 +1,37 @@
+'''
+Sources:
+https://pythonprogramming.net/flask-send-file-tutorial/
+https://python-docx.readthedocs.io/en/latest/
+'''
 import datetime
 
 from flask import Flask, render_template
 from google.cloud import datastore
 from docx import Document
+from docx.shared import Inches
 
 app = Flask(__name__)
 
 datastore_client = datastore.Client()
 
+document = Document()
+
+def create_packing_slips():
+    document.add_heading('Document Title', 0)
+    p = document.add_paragraph('A plain paragraph having some ')
+    p.add_run('bold').bold = True
+    p.add_run(' and some ')
+    p.add_run('italic.').italic = True
+    document.add_page_break()
+    return
+
 @app.route('/')
 def root():
 
+    # document.save('demo.docx')
 
     return render_template(
-        'index.html', times=times)
+        'index.html')
 
 
 if __name__ == '__main__':

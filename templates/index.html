@@ -1,18 +1,17 @@
 <!doctype html>
 <html>
 <head>
-  <title>Datastore and Firebase Auth Example</title>
+  <title>Kinfood</title>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-  <h1>Datastore and Firebase Auth Example</h1>
+  <h1>Welcome to Kinfood's Packing Slip Generator Page!</h1>
 
-  <h2>Last 10 visits</h2>
-  {% for time in times %}
-    <p>{{ time['timestamp'] }}</p>
-  {% endfor %}
+  <div class="container" align="left">
+		<a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a>
+   </div>
 
 </body>
 </html>
