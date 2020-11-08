@@ -17,7 +17,6 @@ datastore_client = datastore.Client()
 document = Document()
 
 def create_packing_slips():
-    doc = docx.
     document.add_heading('Document Title', 0)
     p = document.add_paragraph('A plain paragraph having some ')
     p.add_run('bold').bold = True
@@ -39,7 +38,9 @@ def return_files():
 
     # document.save('demo.docx')
 
-    return document
+    #return document
+    return render_template(
+        'index.html')
 
 
 if __name__ == '__main__':
